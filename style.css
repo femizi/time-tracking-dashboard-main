@@ -18,12 +18,12 @@ body{
 }
 main{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: fixed;
+    position: relative;
 }
 h1, h2{
     color: #fff;
@@ -95,7 +95,7 @@ h2{
 .side-cards{
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(30%, 1fr) );
-    gap: 10px;
+    gap: 20px;
     
 }
 .smaller-cards{
@@ -166,4 +166,29 @@ position: relative;
     right: 0;
     padding-right: 15px;
     cursor: pointer;
+}
+
+/* Media queries */
+@media screen and (max-width: 480px) {
+    .big-grid{
+        grid-template-columns: 1fr;
+        width: 400px;
+    }
+    .side-cards{
+        grid-template-columns: 1fr;
+    }
+    .main-card{
+        height: 250px;
+    }
+    h1{
+        padding-top: 5px;
+    }
+    .options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .main-pic{
+        display: inline-block;
+    }
 }
